@@ -11,4 +11,4 @@ const sum = (a, b) => {
   return a + b;
 };
 
-const num = sum(5, "10"); // warning
+// const num = sum(5, "10"); // warning
