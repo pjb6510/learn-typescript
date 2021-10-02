@@ -169,7 +169,6 @@ async function setupData() {
 function renderChart(data, labels) {
   var ctx = $('#lineChart').getContext('2d');
   Chart.defaults.color = '#f5eaea';
-  Chart.defaults.font.family = 'Exo 2';
   new Chart(ctx, {
     type: 'line',
     data: {
