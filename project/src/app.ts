@@ -6,16 +6,16 @@ import { CovidSummaryResonse } from './models/CovidSummary';
 import { CountryInfo } from './models/CountryInfo';
 
 // utils
-function $(selector: string) {
-  return document.querySelector(selector);
+function $<T extends HTMLElement = HTMLDivElement>(selector: string) {
+  return document.querySelector(selector) as T;
 }
 function getUnixTimestamp(date: string | number | Date) {
   return new Date(date).getTime();
 }
 
 // DOM
-const confirmedTotal = $('.confirmed-total') as HTMLSpanElement;
-const deathsTotal = $('.deaths') as HTMLParagraphElement;
+const confirmedTotal = $<HTMLSpanElement>('.confirmed-total');
+const deathsTotal = $<HTMLParagraphElement>('.deaths');
 const recoveredTotal = $('.recovered') as HTMLParagraphElement;
 const lastUpdatedTime = $('.last-updated-time') as HTMLParagraphElement;
 const rankList = $('.rank-list');
