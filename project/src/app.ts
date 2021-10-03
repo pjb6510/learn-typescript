@@ -1,3 +1,6 @@
+import axios from 'axios';
+import { Chart } from 'chart.js';
+
 // utils
 function $(selector: string) {
   return document.querySelector(selector);
@@ -176,7 +179,7 @@ async function setupData() {
 }
 
 function renderChart(data, labels) {
-  var ctx = $('#lineChart').getContext('2d');
+  const ctx = ($('#lineChart') as HTMLCanvasElement).getContext('2d');
   Chart.defaults.color = '#f5eaea';
   new Chart(ctx, {
     type: 'line',
